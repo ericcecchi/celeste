@@ -89,6 +89,7 @@ gulp.task('styles', () => {
 
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
+      './app/styles/vendor/*',
     './app/styles/semantic.less'
   ])
     .pipe($.newer('.tmp/styles'))
@@ -170,7 +171,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
   });
 
   gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['styles/**/*.less'], ['styles', reload]);
+  gulp.watch(['app/styles/**/*.less'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts']);
   gulp.watch(['app/images/**/*'], reload);
 });
