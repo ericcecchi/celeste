@@ -1,0 +1,162 @@
+/*******************************
+        Import Directives
+*******************************/
+
+/*------------------
+       Theme
+-------------------*/
+
+@theme: @@element;
+
+/*--------------------
+   Site Variables
+---------------------*/
+
+/* Default site.variables */
+@import "@{themesFolder}/default/globals/site.variables";
+
+/* Packaged site.variables */
+@import "@{themesFolder}/@{site}/globals/site.variables";
+
+/* Component's site.variables */
+@import (optional) "@{themesFolder}/@{theme}/globals/site.variables";
+
+/* Site theme site.variables */
+@import (optional) "@{siteFolder}/globals/site.variables";
+
+/*-------------------
+ Component Variables
+---------------------*/
+
+/* Default */
+@import "@{themesFolder}/default/@{type}s/@{element}.variables";
+
+/* Packaged Theme */
+@import (optional) "@{themesFolder}/@{theme}/@{type}s/@{element}.variables";
+
+/* Site Theme */
+@import (optional) "@{siteFolder}/@{type}s/@{element}.variables";
+
+/*******************************
+             Mix-ins
+*******************************/
+
+/*------------------
+       Fonts
+-------------------*/
+
+.loadFonts() when (@importGoogleFonts) {
+  @import url('@{googleProtocol}fonts.googleapis.com/css?family=@{googleFontRequest}');
+}
+
+/*------------------
+     Overrides
+-------------------*/
+
+.loadUIOverrides() {
+  @import (optional) "@{themesFolder}/@{theme}/@{type}s/@{element}.overrides";
+  @import (optional) "@{siteFolder}/@{type}s/@{element}.overrides";
+}
+
+.wf-loading {
+  h1,h2,h3,h4,h5,p,li,button,a {
+    visibility: hidden;
+  }
+}
+
+h1,
+h2 {
+  font-family: 'courier-prime', monospace;
+  font-weight: 700;
+  font-size: 4rem;
+}
+.glide--horizontal .glide__bullets {
+  bottom: -25px;
+}
+.glide__bullets>* {
+  background-color: #999;
+  &.active {
+    background-color: #333;
+  }
+}
+.glide--horizontal .glide__arrows {
+  width: 120%;
+  margin-left: -10%;
+}
+.glide__arrow {
+  color: #ccc;
+  .material-icons {
+    font-size: 2rem;
+  }
+}
+p,
+blockquote {
+  font-family: 'courier-prime', monospace;
+}
+.MainImage-container {
+  min-height: 100vh;
+  padding: 50% 50% 0 0;
+}
+.MainImage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: no-repeat center / cover;
+  z-index:0;
+  animation: slider ease-in-out 30s both infinite;
+  transform: translateZ(0);
+}
+@keyframes slider {
+  0% {
+    background-image: url(../images/11373510_1455872684711042_426210377_n.jpg);
+  }
+  33% {
+    background-image: url(../images/917543_761306453909962_288060106_n.jpg);
+  }
+  66% {
+    background-image: url(../images/11373840_516625221839913_823116_n.jpg);
+  }
+  100% {
+    background-image: url(../images/11373510_1455872684711042_426210377_n.jpg);
+  }
+}
+
+
+.ui.grid > .row > .column.MainContent {
+  padding: 80px;
+  align-self: center;
+}
+
+blockquote {
+  margin: 5rem 0 0;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.QuoteAuthor {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  &-name {
+    font-size: 1.4rem;
+  }
+  &-title {
+    color: #999;
+  }
+  > img {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    float: left;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}
+
+.hart {
+  margin: 0 0.09em;
+  color: #f00;
+}
+
