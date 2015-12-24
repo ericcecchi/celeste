@@ -71,14 +71,19 @@
   }
 }
 
+h1 {
+  font-size: 4rem;
+}
 h1,
 h2 {
   font-family: 'courier-prime', monospace;
   font-weight: 700;
-  font-size: 4rem;
+}
+.glide {
+  padding-bottom: 4rem;
 }
 .glide--horizontal .glide__bullets {
-  bottom: -25px;
+  bottom: 2rem;
 }
 .glide__bullets>* {
   background-color: #999;
@@ -87,8 +92,10 @@ h2 {
   }
 }
 .glide--horizontal .glide__arrows {
-  width: 120%;
-  margin-left: -10%;
+  width: 100%;
+  top: auto;
+  bottom: 2rem;
+  margin-left: 0;
 }
 .glide__arrow {
   color: #ccc;
@@ -132,18 +139,19 @@ blockquote {
 
 
 .ui.grid > .row > .column.MainContent {
-  padding: 5rem;
+  padding: 5rem 3rem;
+  max-width: 640px;
   align-self: center;
 }
 
 blockquote {
-  margin: 5rem 1em 0;
+  margin: 5rem .6em 0;
   position: relative;
   font-size: 1.3rem;
   line-height: 1.5;
   &::before {
     position: absolute;
-    left: -1em;
+    left: -.6em;
     content: "\201C";
   }
   @media screen and (max-width: 599px) {
@@ -201,10 +209,8 @@ blockquote {
     background-image: url(../images/11373510_1455872684711042_426210377_n.jpg);
     animation: none;
   }
-  .glide--horizontal .glide__arrows {
-    width: 100%;
-    margin: 0;
-    top: 2.5rem;
+  .ui.grid > .row > .column.MainContent {
+    padding: 2rem !important;
   }
   blockquote {
     margin-left: 0;
