@@ -51,7 +51,7 @@
     "gulp-rtlcss": "^0.1.4",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.3.1",
-    "jquery": "^2.1.4",
+    "jquery": "^3.5.0",
     "map-stream": "^0.1.0",
     "merge-stream": "^1.0.0",
     "mkdirp": "^0.5.1",
